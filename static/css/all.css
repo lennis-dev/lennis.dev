@@ -112,7 +112,7 @@ main>footer {
     position: absolute;
     text-align: center;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, calc(-50% - 80px));
     width: 70vw;
 }
 
