@@ -1,0 +1,554 @@
+:root {
+    --text-color: #fff;
+    --text-color-navbar: #000;
+    --color: #f00;
+    --background-color: #000;
+    --background-secondary: #181818;
+}
+
+.display-none {
+    display: none;
+}
+
+a {
+    color: var(--color);
+}
+
+main {
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+::selection {
+    background-color: var(--color);
+    color: var(--background-color);
+}
+
+body {
+    background: radial-gradient(var(--background-secondary), var(--background-color));
+    color: var(--text-color);
+    font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-weight: 200;
+    margin: 0px;
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+nav>ul>li {
+    cursor: pointer;
+    list-style: none;
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+}
+
+nav>ul {
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+}
+
+/*
+    Default style
+*/
+
+.project-gallery>a {
+    text-decoration: none;
+}
+
+.hello-heading {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+}
+
+main>section {
+    height: calc(100vh - 120px);
+    margin: 60px;
+    position: relative;
+    scroll-snap-align: center;
+    width: calc(100vw - 120px);
+}
+
+footer>div>ul {
+    list-style: none;
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
+}
+
+main>footer {
+    border-top: 1px solid #888;
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 60px;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+.page-heading,
+.heading {
+    color: var(--color);
+}
+
+.contact-buttons-container>.button:hover {
+    border-color: var(--color);
+    color: var(--color);
+}
+
+.error-heading {
+    height: min-content;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+}
+
+#contact-from-checkbox {
+    display: none;
+}
+
+.contact-form-modal {
+    background-color: var(--background-color);
+    display: none;
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    z-index: 50;
+}
+
+
+input:checked+.contact-form-modal {
+    display: block;
+}
+
+
+
+/*
+    Projects
+*/
+.project-gallery {
+    display: flex;
+    height: 300px;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    user-select: none;
+    width: 100%;
+}
+
+.project-gallery>div {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--color);
+    height: calc(100% - 40px);
+    min-width: 400px;
+    overflow: hidden;
+    position: relative;
+    scroll-snap-align: center;
+}
+
+.project-gallery>div>a>div.title {
+    bottom: 20px;
+    color: var(--text-color);
+    position: absolute;
+    right: 20px;
+}
+
+.project-gallery>div>a.github,
+.project-gallery>div>a.link {
+    background-image: url("/static/img/svgs/github.svg");
+    background-size: cover;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transition: .2s;
+    width: 30px;
+}
+
+.project-gallery>div>a.github:hover,
+.project-gallery>div>a.link:hover {
+    opacity: .5;
+}
+
+
+.project-gallery>div>a.link {
+    background-image: url("/static/img/svgs/link.svg");
+    right: 45px;
+}
+
+
+.project-gallery>div>a>img {
+    background-color: var(--background-color);
+    height: 100%;
+    object-fit: cover;
+    opacity: .5;
+    width: 100%;
+}
+
+.project-gallery>div {
+    margin: 20px;
+}
+
+.max-width {
+    max-width: 750px;
+    margin: 60px auto;
+    overflow: auto;
+}
+
+.text {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+/*
+    Desktop style
+*/
+@media screen and (min-width: 700px) {
+
+
+    /*
+        Nav
+    */
+    nav>ul {
+        display: flex;
+        position: relative;
+    }
+
+    nav {
+        background: var(--color);
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: max-content;
+        z-index: 5;
+    }
+
+    nav>ul::before {
+        background: var(--color);
+        content: "";
+        height: 70px;
+        left: -35px;
+        position: absolute;
+        rotate: 45deg;
+        top: -25px;
+        width: 70px;
+        z-index: -1;
+    }
+
+    nav>ul>li {
+        font-weight: lighter;
+        height: 60px;
+    }
+
+    nav>ul>li>a {
+        color: var(--text-color-navbar);
+        display: inline-flex;
+        font-size: 22px;
+        height: 60px;
+        line-height: 60px;
+        margin: 0px;
+        padding: 0 40px;
+        transition: .2s;
+    }
+
+    nav>ul>li:hover {
+        font-weight: 900;
+    }
+
+    /*
+        Main content
+    */
+
+
+    .page-heading {
+        color: var(--color);
+        font-size: 60px;
+    }
+
+    .dots {
+        background-image: url("/static/img/svgs/dots.svg");
+        background-position: left top;
+        background-repeat: repeat;
+        background-size: 40px 40px;
+        height: 80px;
+        position: absolute;
+        right: 10px;
+        top: 50px;
+        width: 320px;
+    }
+
+
+    .scroll-down {
+        bottom: 0px;
+        position: absolute;
+        right: 0px;
+        user-select: none;
+        width: 300px;
+    }
+
+    /*
+    Contact Form Modal
+    */
+    .contact-buttons-container>.button {
+        border: 1px solid var(--text-color);
+        cursor: pointer;
+        height: 48px;
+        line-height: 48px;
+        margin: 20px;
+        text-align: center;
+        transition: .2s;
+        user-select: none;
+        width: 50%;
+        text-decoration: none;
+        color: var(--text-color);
+    }
+
+    .contact-buttons-container {
+        display: flex;
+        width: 500px;
+    }
+
+
+
+    .heading {
+        color: var(--color);
+        font-size: 25px;
+    }
+
+
+    .desktop-hidden {
+        display: none;
+    }
+}
+
+/*
+    Mobile style
+*/
+@media screen and (max-width: 700px) {
+
+    .left-header {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 60px;
+        width: 100vw;
+        background-color: var(--background-color);
+        z-index: 2;
+    }
+
+    .left-header>img,
+    .nav-mobile-img {
+        height: 40px;
+        margin: 10px 20px;
+
+    }
+
+    .nav-mobile-img {
+        margin-bottom: 20px;
+    }
+
+    nav>ul>li>a {
+        font-size: 25px;
+        line-height: 40px;
+        margin-left: 20px;
+    }
+
+    main>section {
+        height: calc(100vh - 120px);
+        margin: 60px 20px;
+        width: calc(100vw - 40px);
+    }
+
+    .nav-btn {
+        background-color: var(--color);
+        height: 60px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 56px;
+        z-index: 5;
+    }
+
+    .nav-btn::before {
+        background: var(--color);
+        content: "";
+        height: 70px;
+        left: -35px;
+        position: absolute;
+        rotate: 45deg;
+        top: -25px;
+        width: 70px;
+        z-index: -1;
+    }
+
+    #nav-toggle:checked~div>.nav-icon:before {
+        transform: translateY(12px) rotate(135deg);
+    }
+
+    #nav-toggle:checked~div>.nav-icon:after {
+        transform: translateY(-12px) rotate(-135deg);
+    }
+
+    #nav-toggle:checked~div>.nav-icon div {
+        transform: scale(0);
+    }
+
+    .nav-icon {
+        cursor: pointer;
+        float: right;
+        margin: 8.5px;
+        width: 40px;
+    }
+
+    .nav-icon:after,
+    .nav-icon:before,
+    .nav-icon div {
+        background-color: var(--background-color);
+        border-radius: 3px;
+        content: "";
+        display: block;
+        height: 5px;
+        margin: 7px 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    nav {
+        background-color: var(--background-color);
+        height: min-content;
+        max-height: 0%;
+        left: 0px;
+        overflow: hidden;
+        position: absolute;
+        top: 0px;
+        transition: .5s;
+        width: 100vw;
+        z-index: 3;
+    }
+
+    #nav-toggle:checked~label>nav {
+        max-height: 100%;
+    }
+
+    #nav-toggle:checked~label {
+        position: absolute;
+        display: block;
+        height: 100vh;
+        z-index: 2;
+        top: 0px;
+        width: 100vw;
+        left: 0px;
+    }
+
+    main>footer {
+        display: block;
+    }
+
+    main>footer>* {
+        margin-bottom: 40px;
+    }
+
+
+    main>footer>*:last-child {
+        margin: 0px;
+    }
+
+    .page-heading {
+        font-size: 40px;
+    }
+
+    .contact-buttons-container {
+        width: 100%;
+    }
+
+    .contact-buttons-container>.button {
+        border: 1px solid var(--text-color);
+        cursor: pointer;
+        height: 48px;
+        line-height: 48px;
+        margin: 20px 0px;
+        text-align: center;
+        transition: .2s;
+        user-select: none;
+        width: calc(100vw - 42px);
+        display: block;
+        text-decoration: none;
+        color: var(--text-color);
+    }
+
+    .error-heading {
+        width: min-content;
+    }
+
+    .heading {
+        font-size: 30px;
+    }
+
+    .mobile-hidden {
+        display: none;
+    }
+
+    .nav-footer>ul {
+        display: flex;
+        padding-left: 20px;
+    }
+
+    .nav-footer>ul>li {
+        list-style: none;
+        width: max-content;
+        margin-right: 20px;
+    }
+
+    .project-gallery {
+        height: calc(50vh - 120px);
+    }
+
+    .project-gallery>div {
+        min-width: calc(100vw - 120px);
+    }
+}
+
+
+
+
+
+/* 
+    Light mode
+*/
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-color: #000;
+        --text-color-navbar: #fff;
+        --background-color: #fff;
+        --background-secondary: #e8e8e8;
+    }
+
+
+    /*
+        Icons
+    */
+    .project-gallery>div>a.github {
+        background-image: url("/static/img/svgs/github-dark.svg");
+    }
+
+    .project-gallery>div>a.link {
+        background-image: url("/static/img/svgs/link-dark.svg");
+    }
+}
