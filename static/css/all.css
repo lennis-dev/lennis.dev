@@ -15,8 +15,8 @@ a {
 }
 
 main {
-    height: 100vh;
-    overflow: auto;
+    height: 100%;
+    overflow: scroll;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
@@ -33,6 +33,8 @@ body {
     font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
     font-weight: 200;
     margin: 0px;
+    height: 100vh;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -93,7 +95,7 @@ main>footer {
     justify-content: space-around;
     padding: 60px;
     position: relative;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
 }
 
 .page-heading,
@@ -233,7 +235,7 @@ input:checked+.contact-form-modal {
 
     nav {
         background: var(--color);
-        position: absolute;
+        position: fixed;
         right: 0;
         top: 0;
         width: max-content;
