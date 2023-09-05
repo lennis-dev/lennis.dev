@@ -77,7 +77,8 @@ main>section {
     height: calc(100vh - 120px);
     margin: 60px;
     position: relative;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
+    scroll-margin-top: 60px;
     width: calc(100vw - 120px);
 }
 
@@ -210,7 +211,7 @@ input:checked+.contact-form-modal {
 .max-width {
     max-width: 750px;
     margin: 60px auto;
-    overflow: auto;
+    height: auto;
 }
 
 .text {
@@ -282,6 +283,7 @@ input:checked+.contact-form-modal {
     .page-heading {
         color: var(--color);
         font-size: 60px;
+        line-height: 70px;
     }
 
     .dots {
@@ -332,6 +334,7 @@ input:checked+.contact-form-modal {
     .heading {
         color: var(--color);
         font-size: 25px;
+        line-height: 35px;
     }
 
 
@@ -473,6 +476,7 @@ input:checked+.contact-form-modal {
 
     .page-heading {
         font-size: 40px;
+        line-height: 50px;
     }
 
     .contact-buttons-container {
@@ -500,6 +504,7 @@ input:checked+.contact-form-modal {
 
     .heading {
         font-size: 30px;
+        line-height: 40px;
     }
 
     .mobile-hidden {
