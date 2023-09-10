@@ -219,6 +219,29 @@ input:checked+.contact-form-modal {
     line-height: 30px;
 }
 
+.server-log-list>li::marker {
+    content: '> ';
+    padding-right: 10px;
+    color: var(--color);
+}
+
+.address {
+    font-family: monospace;
+    margin: 20px;
+}
+
+.color {
+    color: var(--color);
+}
+
+
+.small-margin {
+    margin: 20px auto;
+}
+
+.no-bottom-margin {
+    margin-bottom: 0px;
+}
 
 /*
     Desktop style
