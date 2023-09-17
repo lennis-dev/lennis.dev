@@ -436,6 +436,10 @@ label.close[for="contact-from-checkbox"] {
 */
 @media screen and (max-width: 700px) {
 
+    .skill-bar-fill::after {
+        display: none;
+    }
+
     .left-header {
         position: absolute;
         top: 0px;
