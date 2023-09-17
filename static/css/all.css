@@ -243,6 +243,10 @@ input:checked+.contact-form-modal {
     margin-bottom: 0px;
 }
 
+.project-image {
+    width: 100%;
+}
+
 /*
     Desktop style
 */
