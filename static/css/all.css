@@ -144,7 +144,7 @@ input:checked+.contact-form-modal {
 */
 .project-gallery {
     display: flex;
-    height: 300px;
+    height: 30vh;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     overflow-x: scroll;
@@ -243,8 +243,55 @@ input:checked+.contact-form-modal {
     margin-bottom: 0px;
 }
 
+label.close[for="contact-from-checkbox"] {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+}
+
 .project-image {
     width: 100%;
+}
+
+.skill-box {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--color);
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.skill-box-container {
+    min-width: 40%;
+}
+
+.skill-bar {
+    height: 30px;
+    padding: 5px 0;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 20px;
+}
+
+.skill-bar-fill {
+    border-radius: 10px;
+    transition: .5s;
+    height: 100%;
+    width: calc(var(--value) / 100 * 100%);
+    background-color: var(--color);
+    position: relative;
+}
+
+.skill-bar-fill::after {
+    counter-reset: value var(--value);
+    content: counter(value) "%";
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: var(--background-color);
+    line-height: 32px;
+    font-size: 16px;
+    height: 32px;
 }
 
 /*
@@ -252,6 +299,13 @@ input:checked+.contact-form-modal {
 */
 @media screen and (min-width: 700px) {
 
+    .about-slide {
+        display: flex;
+    }
+
+    .skill-box-container {
+        margin: 0 40px;
+    }
 
     /*
         Nav
@@ -368,6 +422,13 @@ input:checked+.contact-form-modal {
     .desktop-hidden {
         display: none;
     }
+
+    .contact-form-modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 /*
@@ -449,6 +510,14 @@ input:checked+.contact-form-modal {
         width: 40px;
     }
 
+    .about-slide {
+        display: block;
+    }
+
+    .skill-box-container {
+        margin: 40px 0px;
+    }
+
     .nav-icon:after,
     .nav-icon:before,
     .nav-icon div {
@@ -508,6 +577,14 @@ input:checked+.contact-form-modal {
 
     .contact-buttons-container {
         width: 100%;
+    }
+
+    .contact-form-modal {
+        top: 0px;
+        left: 0px;
+        height: 100vh;
+        width: 100vw;
+        background: var(--background-color);
     }
 
     .contact-buttons-container>.button {
