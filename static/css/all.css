@@ -48,6 +48,7 @@ body {
 nav>ul>li {
     cursor: pointer;
     list-style: none;
+    font-weight: 400;
 }
 
 nav>ul>li>a {
@@ -340,7 +341,6 @@ label.close[for="contact-from-checkbox"] {
     }
 
     nav>ul>li {
-        font-weight: 300;
         height: 60px;
     }
 
@@ -355,8 +355,9 @@ label.close[for="contact-from-checkbox"] {
         transition: .2s;
     }
 
-    nav>ul>li:hover {
-        color: var(--background-secondary);
+    nav>ul>li:hover>a {
+        background-color: var(--background-color);
+        color: var(--color);
     }
 
     /*
