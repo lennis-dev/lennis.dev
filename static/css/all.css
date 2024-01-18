@@ -652,6 +652,7 @@ label.close[for="contact-from-checkbox"] {
     }
 
     .hello-heading {
+        padding-top: 60px;
         text-align: center;
         position: relative;
         transform: none;
