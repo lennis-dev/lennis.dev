@@ -472,9 +472,10 @@ label.close[for="contact-from-checkbox"] {
     }
 
     main>section {
-        height: calc(100vh - 120px);
+        height: auto;
         margin: 60px 20px;
         width: calc(100vw - 40px);
+        scroll-snap-align: none;
     }
 
     .nav-btn {
@@ -640,6 +641,14 @@ label.close[for="contact-from-checkbox"] {
 
     .project-gallery>div {
         min-width: calc(100vw - 120px);
+    }
+
+    main {
+        scroll-snap-type: y proximity;
+    }
+
+    #hello {
+        height: 20%;
     }
 }
 
