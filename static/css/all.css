@@ -648,7 +648,15 @@ label.close[for="contact-from-checkbox"] {
     }
 
     #hello {
-        height: 20%;
+        height: auto;
+    }
+
+    .hello-heading {
+        text-align: center;
+        position: relative;
+        transform: none;
+        left: 0%;
+        right: 0%;
     }
 }
 
