@@ -100,7 +100,6 @@ main>footer {
     justify-content: space-around;
     padding: 60px;
     position: relative;
-    scroll-snap-align: center;
 }
 
 .page-heading,
@@ -302,6 +301,10 @@ label.close[for="contact-from-checkbox"] {
     Desktop style
 */
 @media screen and (min-width: 700px) {
+
+    main>footer {
+        scroll-snap-align: center;
+    }
 
     .about-slide {
         display: flex;
