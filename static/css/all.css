@@ -356,6 +356,7 @@ label.close[for="contact-from-checkbox"] {
         margin: 0px;
         padding: 0 40px;
         transition: .2s;
+        background-color: var(--color);
     }
 
     nav>ul>li:hover>a {
