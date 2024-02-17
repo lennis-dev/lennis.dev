@@ -1,2 +1,5 @@
 DirectoryIndex /index.php
 FallbackResource /index.php
+
+RewriteEngine On
+RewriteRule ^banner$ /static/img/svgs/lennis.dev.svg [L]
