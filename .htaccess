@@ -3,4 +3,5 @@ FallbackResource /index.php
 
 RewriteEngine On
 RewriteRule ^banner$ /static/img/svgs/lennis.dev.svg [L]
+RewriteRule ^banner.png$ /static/img/assets/banner.png [L]
 RewriteRule ^icon$ /static/img/svgs/lennis.dev.icon.svg [L]
