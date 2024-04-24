@@ -17,6 +17,7 @@ a {
 main {
     height: 100%;
     overflow: scroll;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
