@@ -4,6 +4,7 @@
     --color: #f00;
     --background-color: #000;
     --background-secondary: #181818;
+    --archived-color: #ff0;
 }
 
 .display-none {
@@ -158,12 +159,28 @@ input:checked+.contact-form-modal {
 .project-gallery>div {
     background-color: var(--background-color);
     border-radius: 10px;
-    box-shadow: 0 0 10px var(--color);
+    background-color: #000;
     height: calc(100% - 40px);
     min-width: 400px;
     overflow: hidden;
     position: relative;
     scroll-snap-align: center;
+}
+
+.project-gallery>div.archived::after {
+    content: "ARCHIVED";
+    border: 1px solid var(--archived-color);
+    background-color: var(--archived-color);
+    color: #000;
+    border-radius: 10px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    text-align: center;
+    padding: 5px;
+    line-height: 10px;
+    font-weight: bolder;
+    font-size: 12px;
 }
 
 .project-gallery>div>a>div.title {
@@ -688,11 +705,4 @@ label.close[for="contact-from-checkbox"] {
     /*
         Icons
     */
-    .project-gallery>div>a.github {
-        background-image: url("/static/img/svgs/github-dark.svg");
-    }
-
-    .project-gallery>div>a.link {
-        background-image: url("/static/img/svgs/link-dark.svg");
-    }
 }
