@@ -16,9 +16,8 @@ a {
 
 main {
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
 }
@@ -93,7 +92,7 @@ footer>div>ul {
 }
 
 main>footer {
-    border-top: 1px solid #888;
+    border-top: 2px solid var(--color);
     color: var(--text-color);
     display: flex;
     justify-content: space-around;
