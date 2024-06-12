@@ -21,6 +21,7 @@ main {
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
+    line-height: 1.5;
 }
 
 ::selection {
@@ -165,6 +166,7 @@ input:checked+.contact-form-modal {
     overflow: hidden;
     position: relative;
     scroll-snap-align: center;
+    border: 2px solid var(--color);
 }
 
 .project-gallery>div.archived::after {
@@ -355,12 +357,13 @@ label.close[for="contact-from-checkbox"] {
         background: var(--color);
         content: "";
         height: 70px;
-        left: -35px;
+        left: -35.2px;
         position: absolute;
         rotate: 45deg;
-        top: -25px;
+        top: -20.6px;
         width: 70px;
         z-index: -1;
+        border-radius: 10px;
     }
 
     nav>ul>li {
@@ -371,12 +374,13 @@ label.close[for="contact-from-checkbox"] {
         color: var(--text-color-navbar);
         display: inline-flex;
         font-size: 22px;
-        height: 60px;
-        line-height: 60px;
-        margin: 0px;
-        padding: 0 40px;
-        transition: .2s;
+        height: 40px;
+        line-height: 40px;
+        margin: 10px;
+        padding: 0 20px;
+        transition: .5s;
         background-color: var(--color);
+        border-radius: 10px;
     }
 
     nav>ul>li:hover>a {
