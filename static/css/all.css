@@ -11,6 +11,10 @@
     display: none;
 }
 
+* {
+    transition: color .5s, background-color .5s, opaacity .5s;
+}
+
 a {
     color: var(--color);
 }
@@ -187,7 +191,7 @@ input:checked+.contact-form-modal {
 
 .project-gallery>div>a>div.title {
     bottom: 20px;
-    color: var(--text-color);
+    color: #fff;
     position: absolute;
     right: 20px;
 }
@@ -200,7 +204,6 @@ input:checked+.contact-form-modal {
     position: absolute;
     right: 10px;
     top: 10px;
-    transition: .2s;
     width: 30px;
 }
 
@@ -295,7 +298,6 @@ label.close[for="contact-from-checkbox"] {
 
 .skill-bar-fill {
     border-radius: 10px;
-    transition: .5s;
     height: 100%;
     width: calc(var(--value) / 100 * 100%);
     background-color: var(--color);
@@ -378,7 +380,6 @@ label.close[for="contact-from-checkbox"] {
         line-height: 40px;
         margin: 10px;
         padding: 0 20px;
-        transition: .5s;
         background-color: var(--color);
         border-radius: 10px;
     }
@@ -430,7 +431,6 @@ label.close[for="contact-from-checkbox"] {
         line-height: 48px;
         margin: 20px;
         text-align: center;
-        transition: .2s;
         user-select: none;
         width: 50%;
         text-decoration: none;
@@ -631,7 +631,6 @@ label.close[for="contact-from-checkbox"] {
         line-height: 48px;
         margin: 20px 0px;
         text-align: center;
-        transition: .2s;
         user-select: none;
         width: calc(100vw - 42px);
         display: block;
