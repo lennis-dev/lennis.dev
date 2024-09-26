@@ -98,12 +98,16 @@ footer>div>ul {
 }
 
 main>footer {
-    border-top: 2px solid var(--color);
     color: var(--text-color);
     display: flex;
     justify-content: space-around;
     padding: 60px;
     position: relative;
+    background-color: var(--color);
+}
+
+main>footer * {
+    color: var(--text-color) !important;
 }
 
 .page-heading,
