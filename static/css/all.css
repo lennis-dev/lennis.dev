@@ -15,7 +15,7 @@
     transition:
         color 0.5s,
         background-color 0.5s,
-        opaacity 0.5s;
+        opacity 0.5s;
 }
 
 a {
@@ -567,12 +567,13 @@ label.close[for="contact-from-checkbox"] {
         background: var(--color);
         content: "";
         height: 70px;
-        left: -35px;
+        left: -35.2px;
         position: absolute;
         rotate: 45deg;
-        top: -25px;
+        top: -20.6px;
         width: 70px;
         z-index: -1;
+        border-radius: 10px;
     }
 
     #nav-toggle:checked ~ div > .nav-icon:before {
