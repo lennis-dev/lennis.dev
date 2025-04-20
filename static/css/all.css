@@ -12,7 +12,10 @@
 }
 
 * {
-    transition: color .5s, background-color .5s, opaacity .5s;
+    transition:
+        color 0.5s,
+        background-color 0.5s,
+        opaacity 0.5s;
 }
 
 a {
@@ -34,12 +37,26 @@ main {
 }
 
 body {
-    background: radial-gradient(var(--background-secondary), var(--background-color));
+    background: radial-gradient(
+        var(--background-secondary),
+        var(--background-color)
+    );
     background-size: max(100vw, 100vh) max(100vw, 100vh);
     background-repeat: no-repeat;
     background-position: center center;
     color: var(--text-color);
-    font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-family:
+        "Open Sans",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Helvetica Neue",
+        sans-serif;
     font-weight: normal;
     margin: 0px;
     height: 100vh;
@@ -51,17 +68,17 @@ body {
     width: 0;
 }
 
-nav>ul>li {
+nav > ul > li {
     cursor: pointer;
     list-style: none;
     font-weight: 400;
 }
 
-nav>ul>li>a {
+nav > ul > li > a {
     text-decoration: none;
 }
 
-nav>ul {
+nav > ul {
     margin: 0px;
     padding: 0px;
     user-select: none;
@@ -71,7 +88,7 @@ nav>ul {
     Default style
 */
 
-.project-gallery>a {
+.project-gallery > a {
     text-decoration: none;
 }
 
@@ -83,21 +100,21 @@ nav>ul {
     user-select: none;
 }
 
-main>section {
+main > section {
     height: calc(100vh - 120px);
     margin: 60px;
     position: relative;
     width: calc(100vw - 120px);
 }
 
-footer>div>ul {
+footer > div > ul {
     list-style: none;
     margin: 0;
     margin-top: 5px;
     padding: 0;
 }
 
-main>footer {
+main > footer {
     color: var(--text-color);
     display: flex;
     justify-content: space-around;
@@ -106,7 +123,7 @@ main>footer {
     background-color: var(--color);
 }
 
-main>footer * {
+main > footer * {
     color: var(--text-color) !important;
 }
 
@@ -115,7 +132,7 @@ main>footer * {
     color: var(--color);
 }
 
-.contact-buttons-container>.button:hover {
+.contact-buttons-container > .button:hover {
     border-color: var(--color);
     color: var(--color);
 }
@@ -143,12 +160,9 @@ main>footer * {
     z-index: 50;
 }
 
-
-input:checked+.contact-form-modal {
+input:checked + .contact-form-modal {
     display: block;
 }
-
-
 
 /*
     Projects
@@ -165,7 +179,7 @@ input:checked+.contact-form-modal {
     width: 100%;
 }
 
-.project-gallery>div {
+.project-gallery > div {
     background-color: var(--background-color);
     border-radius: 10px;
     background-color: #000;
@@ -177,7 +191,7 @@ input:checked+.contact-form-modal {
     border: 2px solid var(--color);
 }
 
-.project-gallery>div.archived::after {
+.project-gallery > div.archived::after {
     content: "ARCHIVED";
     border: 1px solid var(--archived-color);
     background-color: var(--archived-color);
@@ -193,15 +207,15 @@ input:checked+.contact-form-modal {
     font-size: 12px;
 }
 
-.project-gallery>div>a>div.title {
+.project-gallery > div > a > div.title {
     bottom: 20px;
     color: #fff;
     position: absolute;
     right: 20px;
 }
 
-.project-gallery>div>a.github,
-.project-gallery>div>a.link {
+.project-gallery > div > a.github,
+.project-gallery > div > a.link {
     background-image: url("/static/img/svgs/github.svg");
     background-size: cover;
     height: 30px;
@@ -211,27 +225,25 @@ input:checked+.contact-form-modal {
     width: 30px;
 }
 
-.project-gallery>div>a.github:hover,
-.project-gallery>div>a.link:hover {
-    opacity: .5;
+.project-gallery > div > a.github:hover,
+.project-gallery > div > a.link:hover {
+    opacity: 0.5;
 }
 
-
-.project-gallery>div>a.link {
+.project-gallery > div > a.link {
     background-image: url("/static/img/svgs/link.svg");
     right: 45px;
 }
 
-
-.project-gallery>div>a>img {
+.project-gallery > div > a > img {
     background-color: var(--background-color);
     height: 100%;
     object-fit: cover;
-    opacity: .8;
+    opacity: 0.8;
     width: 100%;
 }
 
-.project-gallery>div {
+.project-gallery > div {
     margin: 20px;
 }
 
@@ -246,8 +258,8 @@ input:checked+.contact-form-modal {
     line-height: 30px;
 }
 
-.server-log-list>li::marker {
-    content: '> ';
+.server-log-list > li::marker {
+    content: "> ";
     padding-right: 10px;
     color: var(--color);
 }
@@ -260,7 +272,6 @@ input:checked+.contact-form-modal {
 .color {
     color: var(--color);
 }
-
 
 .small-margin {
     margin: 20px auto;
@@ -303,14 +314,54 @@ label.close[for="contact-from-checkbox"] {
 .skill-bar-fill {
     border-radius: 10px;
     height: 100%;
-    width: calc(var(--value) / 100 * 100%);
+    width: calc(attr(data-value type(<integer>)) / 100 * 100%) !important;
     background-color: var(--color);
     position: relative;
 }
 
+/* Firefox CSS3 Polyfill */
+.skill-bar-fill[data-value="10"] {
+    width: calc(10 / 100 * 100%);
+}
+
+.skill-bar-fill[data-value="20"] {
+    width: calc(20 / 100 * 100%);
+}
+
+.skill-bar-fill[data-value="30"] {
+    width: calc(30 / 100 * 100%);
+}
+
+.skill-bar-fill[data-value="40"] {
+    width: calc(40 / 100 * 100%);
+}
+
+.skill-bar-fill[data-value="50"] {
+    width: calc(50 / 100 * 100%);
+}
+
+.skill-bar-fill[data-value="60"] {
+    width: calc(60 / 100 * 100%);
+}
+
+.skill-bar-fill[data-value="70"] {
+    width: calc(70 / 100 * 100%);
+}
+
+.skill-bar-fill[data-value="80"] {
+    width: calc(80 / 100 * 100%);
+}
+
+.skill-bar-fill[data-value="90"] {
+    width: calc(90 / 100 * 100%);
+}
+
+.skill-bar-fill[data-value="100"] {
+    width: calc(100 / 100 * 100%);
+}
+
 .skill-bar-fill::after {
-    counter-reset: value var(--value);
-    content: counter(value) "%";
+    content: attr(data-value) "%";
     position: absolute;
     top: 0px;
     right: 10px;
@@ -324,12 +375,11 @@ label.close[for="contact-from-checkbox"] {
     Desktop style
 */
 @media screen and (min-width: 700px) {
-
-    body.home main>footer {
+    body.home main > footer {
         scroll-snap-align: center;
     }
 
-    body.home main>section {
+    body.home main > section {
         scroll-snap-align: start;
         scroll-margin-top: 60px;
     }
@@ -345,7 +395,7 @@ label.close[for="contact-from-checkbox"] {
     /*
         Nav
     */
-    nav>ul {
+    nav > ul {
         display: flex;
         position: relative;
     }
@@ -359,7 +409,7 @@ label.close[for="contact-from-checkbox"] {
         z-index: 5;
     }
 
-    nav>ul::before {
+    nav > ul::before {
         background: var(--color);
         content: "";
         height: 70px;
@@ -372,11 +422,11 @@ label.close[for="contact-from-checkbox"] {
         border-radius: 10px;
     }
 
-    nav>ul>li {
+    nav > ul > li {
         height: 60px;
     }
 
-    nav>ul>li>a {
+    nav > ul > li > a {
         color: var(--text-color-navbar);
         display: inline-flex;
         font-size: 22px;
@@ -388,7 +438,7 @@ label.close[for="contact-from-checkbox"] {
         border-radius: 10px;
     }
 
-    nav>ul>li:hover>a {
+    nav > ul > li:hover > a {
         background-color: var(--background-color);
         color: var(--color);
     }
@@ -396,7 +446,6 @@ label.close[for="contact-from-checkbox"] {
     /*
         Main content
     */
-
 
     .page-heading {
         color: var(--color);
@@ -416,7 +465,6 @@ label.close[for="contact-from-checkbox"] {
         width: 320px;
     }
 
-
     .scroll-down {
         bottom: 0px;
         position: absolute;
@@ -428,7 +476,7 @@ label.close[for="contact-from-checkbox"] {
     /*
     Contact Form Modal
     */
-    .contact-buttons-container>.button {
+    .contact-buttons-container > .button {
         border: 1px solid var(--text-color);
         cursor: pointer;
         height: 48px;
@@ -446,14 +494,11 @@ label.close[for="contact-from-checkbox"] {
         width: 500px;
     }
 
-
-
     .heading {
         color: var(--color);
         font-size: 25px;
         line-height: 35px;
     }
-
 
     .desktop-hidden {
         display: none;
@@ -471,7 +516,6 @@ label.close[for="contact-from-checkbox"] {
     Mobile style
 */
 @media screen and (max-width: 700px) {
-
     .skill-bar-fill::after {
         display: none;
     }
@@ -486,24 +530,23 @@ label.close[for="contact-from-checkbox"] {
         z-index: 2;
     }
 
-    .left-header>img,
+    .left-header > img,
     .nav-mobile-img {
         height: 40px;
         margin: 10px 20px;
-
     }
 
     .nav-mobile-img {
         margin-bottom: 20px;
     }
 
-    nav>ul>li>a {
+    nav > ul > li > a {
         font-size: 25px;
         line-height: 40px;
         margin-left: 20px;
     }
 
-    main>section {
+    main > section {
         height: auto;
         margin: 60px 20px;
         width: calc(100vw - 40px);
@@ -532,15 +575,15 @@ label.close[for="contact-from-checkbox"] {
         z-index: -1;
     }
 
-    #nav-toggle:checked~div>.nav-icon:before {
+    #nav-toggle:checked ~ div > .nav-icon:before {
         transform: translateY(12px) rotate(135deg);
     }
 
-    #nav-toggle:checked~div>.nav-icon:after {
+    #nav-toggle:checked ~ div > .nav-icon:after {
         transform: translateY(-12px) rotate(-135deg);
     }
 
-    #nav-toggle:checked~div>.nav-icon div {
+    #nav-toggle:checked ~ div > .nav-icon div {
         transform: scale(0);
     }
 
@@ -579,16 +622,16 @@ label.close[for="contact-from-checkbox"] {
         overflow: hidden;
         position: absolute;
         top: 0px;
-        transition: .5s;
+        transition: 0.5s;
         width: 100vw;
         z-index: 3;
     }
 
-    #nav-toggle:checked~label>nav {
+    #nav-toggle:checked ~ label > nav {
         max-height: 100%;
     }
 
-    #nav-toggle:checked~label {
+    #nav-toggle:checked ~ label {
         position: absolute;
         display: block;
         height: 100vh;
@@ -598,16 +641,15 @@ label.close[for="contact-from-checkbox"] {
         left: 0px;
     }
 
-    main>footer {
+    main > footer {
         display: block;
     }
 
-    main>footer>* {
+    main > footer > * {
         margin-bottom: 40px;
     }
 
-
-    main>footer>*:last-child {
+    main > footer > *:last-child {
         margin: 0px;
     }
 
@@ -628,7 +670,7 @@ label.close[for="contact-from-checkbox"] {
         background: var(--background-color);
     }
 
-    .contact-buttons-container>.button {
+    .contact-buttons-container > .button {
         border: 1px solid var(--text-color);
         cursor: pointer;
         height: 48px;
@@ -655,12 +697,12 @@ label.close[for="contact-from-checkbox"] {
         display: none;
     }
 
-    .nav-footer>ul {
+    .nav-footer > ul {
         display: flex;
         padding-left: 20px;
     }
 
-    .nav-footer>ul>li {
+    .nav-footer > ul > li {
         list-style: none;
         width: max-content;
         margin-right: 20px;
@@ -670,7 +712,7 @@ label.close[for="contact-from-checkbox"] {
         height: calc(50vh - 120px);
     }
 
-    .project-gallery>div {
+    .project-gallery > div {
         min-width: calc(100vw - 120px);
     }
 
@@ -692,11 +734,7 @@ label.close[for="contact-from-checkbox"] {
     }
 }
 
-
-
-
-
-/* 
+/*
     Light mode
 */
 
@@ -707,7 +745,6 @@ label.close[for="contact-from-checkbox"] {
         --background-color: #fff;
         --background-secondary: #e8e8e8;
     }
-
 
     /*
         Icons
